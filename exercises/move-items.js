@@ -49,9 +49,13 @@ function updateCollections(id, direction = "toFavs") {
   if (direction === "toFavs") {
     main.removeChild(item);
     favs.appendChild(item);
+    item.children[0].classList.remove("fa-heart-circle-plus");
+    item.children[0].classList.add("fa-heart-crack");
   } else {
     favs.removeChild(item);
     main.appendChild(item);
+    item.children[0].classList.remove("fa-heart-crack");
+    item.children[0].classList.add("fa-heart-circle-plus");
   }
 }
 
